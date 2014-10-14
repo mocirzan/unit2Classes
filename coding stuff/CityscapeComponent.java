@@ -25,13 +25,29 @@ public class CityscapeComponent extends JComponent
     public void paintComponent(Graphics g)
     {
         Graphics2D g2 = (Graphics2D) g;
+        
         int x = getWidth();
         int y = getHeight();
-        Building1 building1 = new Building1(300,y);
+        
+        Skyline blah = new Skyline(x,y);
+        blah.draw(g2);
+        
+        Background bkg = new Background(x,y);
+        bkg.draw(g2);
+        
+        Building building1 = new Building(50, y, 107, 135, 130, 150);
         building1.draw(g2);
         
-        Building1 building2 = new Building1(500,y);
+        Building building2 = new Building(140, y, 40, 140, 40, 310);
         building2.draw(g2);
+        
+        Building building3 = new Building(300, y, 60, 60, 60, 250);
+        building3.draw(g2);
+        
+        Moon moon = new Moon(650, 10);
+        moon.draw(g2);
+        
+        
         
         
     }
